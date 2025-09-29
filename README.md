@@ -1,1 +1,1 @@
-This was for a competition with my good friend ttchef!
+This was for a competition with my good friend [ttchef](https://github.com/ttchef/)!
