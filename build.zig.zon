@@ -1,0 +1,12 @@
+.{
+    .name = .win,
+    .version = "0.0.0",
+    .fingerprint = 0xb0ca3b76b2df88da,
+    .minimum_zig_version = "0.16.0-dev.457+f90510b08",
+    .dependencies = .{},
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
