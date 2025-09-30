@@ -41,8 +41,11 @@ pub fn main() !void {
 
         const exit: bool = while (true) {
             @memset(buffer[0..], 0x00);
+            var prng = std.Random.DefaultPrng.init(count);
+            const random = prng.random();
+
             const dialog = try std.fmt.bufPrintZ(&buffer, "{d}", .{count});
-            const input = MessageBoxA(null, dialog, title, MB_ICONWARNING | MB_ABORTRETRYIGNORE | if (count % 13 == 0) MB_DEFBUTTON2 else MB_DEFBUTTON3);
+            const input = MessageBoxA(null, dialog, title, MB_ICONWARNING | MB_ABORTRETRYIGNORE | if (random.boolean()) MB_DEFBUTTON2 else MB_DEFBUTTON3);
 
             switch (input) {
                 IDABORT => break true,
